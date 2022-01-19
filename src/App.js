@@ -1,16 +1,15 @@
 import "./styles.css";
 
-import Form from "./components/forms/Form";
 import Test from "./components/forms/Test";
 import Test1 from "./components/forms/Test1";
+import ContactFormPage from "./pages/ContactFormPage";
 
 export default function App() {
   return (
     <div className="App">
-      {/* <Form /> */}
-
       <Test />
       <Test1 />
+      <ContactFormPage />
     </div>
   );
 }

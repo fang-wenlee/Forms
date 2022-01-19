@@ -17,10 +17,11 @@ class Test1 extends Component {
   }
 
   render() {
+    const { greeting } = this.state;
     return (
       <div>
         <h2>Greetings Portal</h2>
-        <p>{this.state.greeting}</p>
+        <p>{greeting}</p>
 
         {/* Set click handler */}
         <button onClick={this.updateState}>Click me!</button>

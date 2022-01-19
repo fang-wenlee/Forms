@@ -79,12 +79,14 @@ export default class ContactFormComp extends React.Component {
     e.preventDefault();
     let fields = this.state.fields;
 
+    console.log(fields);
     if (this.handleValidation()) {
       this.setState({ allFieldsValid: true });
 
       fields["name"] = "";
       fields["email"] = "";
       fields["phone"] = "";
+      console.log(fields);
     }
   }
 
