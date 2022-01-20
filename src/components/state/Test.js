@@ -2,11 +2,7 @@ import React from "react";
 
 class Test extends React.Component {
   state = {
-    user: {
-      name: "Fang-Wen",
-      age: 19,
-      active: true
-    }
+    user: { name: "Fang-Wen", age: 19, active: true }
   };
 
   handleAge = () => {
