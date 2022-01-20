@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const InsertItem = ({ addTask }) => {
+const InsertItem = ({ addTask, removeAllCompleted }) => {
   const [userInput, setUserInput] = useState(null);
 
   const handleChange = (e) => {
@@ -14,6 +14,11 @@ const InsertItem = ({ addTask }) => {
     addTask(userInput);
     setUserInput("");
   };
+  const handleCompleted = (e) => {
+    e.preventDefault();
+    removeAllCompleted();
+  };
+
   return (
     <>
       <input
@@ -24,6 +29,7 @@ const InsertItem = ({ addTask }) => {
         placeholder="Enter task"
       />
       <button onClick={handleInsert}> Insert </button>
+      <button onClick={handleCompleted}>Remove All Completed </button>
     </>
   );
 };

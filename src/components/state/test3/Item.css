@@ -11,7 +11,7 @@
 .item-container h3 {
   text-align: left;
 }
-h3 .strike {
+.item-container .strike {
   text-decoration: line-through;
   color: red;
 }

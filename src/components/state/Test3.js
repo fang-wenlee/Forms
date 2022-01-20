@@ -33,14 +33,36 @@ export default class Test3 extends React.Component {
     this.setState({ list: afterDelList });
   };
 
+  markComplete = (id) => {
+    const list = this.state.list;
+    let markComplete = list.map((task) => {
+      return task.id === Number(id)
+        ? { ...task, complete: !task.complete }
+        : { ...task };
+    });
+    this.setState({ list: markComplete });
+  };
+  removeAllCompleted = () => {
+    const list = this.state.list;
+    let unFinishTasks = list.filter((task) => task.complete === false);
+    this.setState({ list: unFinishTasks });
+  };
+
   render() {
     return (
       <div>
         <h2>class componet as parent component</h2>
-        <InsertItem addTask={this.addTask} />
+        <InsertItem
+          addTask={this.addTask}
+          removeAllCompleted={this.removeAllCompleted}
+        />
         <br />
         <hr />
-        <ItemList todos={this.state.list} deleteItem={this.deleteItem} />
+        <ItemList
+          todos={this.state.list}
+          deleteItem={this.deleteItem}
+          markComplete={this.markComplete}
+        />
         {/* {this.state.list.map((item) => {
           return <p key={item.id}> {item.task}</p>;
         })} */}
