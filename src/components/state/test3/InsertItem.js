@@ -18,7 +18,7 @@ const InsertItem = ({ addTask }) => {
     <>
       <input
         type="text"
-        size="60"
+        size="40"
         value={userInput}
         onChange={handleChange}
         placeholder="Enter task"

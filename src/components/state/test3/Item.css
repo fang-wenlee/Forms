@@ -1,0 +1,22 @@
+.item-container {
+  background: #fff;
+  border-radius: 8px;
+  margin: 0 auto;
+  padding: 15px;
+  position: relative;
+
+  width: 60%;
+  box-shadow: 2px 8px 18px grey;
+}
+.item-container h3 {
+  text-align: left;
+}
+h3 .strike {
+  text-decoration: line-through;
+  color: red;
+}
+.buttons-container {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+}
