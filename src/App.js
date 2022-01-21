@@ -4,6 +4,7 @@ import "./styles.css";
 
 //import ClassCompPage from "./pages/ClassCompPage";
 import ContactFormPage from "./pages/ContactFormPage";
+import ButtonCompPage from "./pages/ButtonCompPage";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <ClassCompPage />*/}
       <hr /> <hr />
       <ContactFormPage />
+      <ButtonCompPage />
     </div>
   );
 }
