@@ -3,7 +3,7 @@ import "./styles.css";
 // import Test from "./components/state/Test";
 
 //import ClassCompPage from "./pages/ClassCompPage";
-import ContactFormPage from "./pages/ContactFormPage";
+//import ContactFormPage from "./pages/ContactFormPage";
 import ButtonCompPage from "./pages/ButtonCompPage";
 
 export default function App() {
@@ -13,8 +13,8 @@ export default function App() {
       <hr />
       <Test1 /> 
       <ClassCompPage />*/}
-      <hr /> <hr />
-      <ContactFormPage />
+      {/* <hr /> <hr />
+      <ContactFormPage /> */}
       <ButtonCompPage />
     </div>
   );

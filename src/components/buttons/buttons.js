@@ -25,10 +25,10 @@ export const IncrementButton = () => {
 export const ShowEvenCountButton = ({ input }) => {
   //console.log(input);
   const [count, setCount] = useState(0);
-
+  var mytimeout;
   const startCounting = () => {
     for (let i = 0; i <= input; i++) {
-      setTimeout(() => {
+      mytimeout = setTimeout(() => {
         console.log(i);
         setCount(count + i);
       }, i * 100);
@@ -43,6 +43,7 @@ export const ShowEvenCountButton = ({ input }) => {
     <>
       <h3>Increasae the number 1 by 1 till user input.</h3>
       <button onClick={startCounting}>Start</button>
+
       <button onClick={resetCount}>Reset</button>
       <span> {count} times</span>
     </>
