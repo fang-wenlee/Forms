@@ -2,3 +2,9 @@
   width: 100%;
   position: relative;
 }
+.hide-todos {
+  display: none;
+}
+.all-todos {
+  display: block;
+}

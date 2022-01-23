@@ -8,7 +8,11 @@ export default class Test3 extends React.Component {
   constructor(props) {
     super(props);
     // ***//
-    this.state = { list: data };
+    this.state = {
+      flag: true,
+      list: data
+    };
+
     //*** */
   }
 
@@ -40,32 +44,45 @@ export default class Test3 extends React.Component {
         ? { ...task, complete: !task.complete }
         : { ...task };
     });
-    this.setState({ list: markComplete });
+    this.setState({ ...list, list: markComplete });
   };
   removeAllCompleted = () => {
-    const list = this.state.list;
-    let unFinishTasks = list.filter((task) => task.complete === false);
-    this.setState({ list: unFinishTasks });
+    this.setState({ flag: !this.state.flag });
+    console.log(this.state.flag);
+
+    if (this.state.flag === false) {
+      const unfinsihTodos = this.state.list.filter(
+        (todo) => todo.complete === false
+      );
+      console.log("insdie filter: ", unfinsihTodos);
+      this.setState({ ...this.state.list, list: unfinsihTodos });
+      // const todos = this.state.list;
+    } else if (this.state.flag === true) {
+      this.setState({ ...this.state.list, list: data });
+      console.log("default: ", this.state.list);
+    }
   };
 
   render() {
+    const todos = this.state.list;
+
     return (
       <div>
         <h2>class componet as parent component</h2>
         <InsertItem
           addTask={this.addTask}
           removeAllCompleted={this.removeAllCompleted}
+          flag={this.state.flag}
         />
         <br />
         <hr />
+
         <ItemList
-          todos={this.state.list}
+          // flag={this.state.flag}
+          todos={todos}
           deleteItem={this.deleteItem}
           markComplete={this.markComplete}
         />
-        {/* {this.state.list.map((item) => {
-          return <p key={item.id}> {item.task}</p>;
-        })} */}
       </div>
     );
   }

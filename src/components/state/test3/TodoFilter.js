@@ -1,13 +1,9 @@
 import React from "react";
-import Item from "./Item.js";
-import "./ItemList.css";
+import Item from "./Item";
 
-const ItemList = ({ todos, deleteItem, markComplete }) => {
-  //console.log("Item List comp : ", flag);
-
+const TodoFilter = ({ todos, deleteItem, markComplete }) => {
   return (
-    // <div className={`item-list ${flag ? "all-todos" : "hide-todos"}`}>
-    <div>
+    <div className="item-list">
       {todos.map((item) => {
         return (
           <Item
@@ -21,4 +17,5 @@ const ItemList = ({ todos, deleteItem, markComplete }) => {
     </div>
   );
 };
-export default ItemList;
+
+export default TodoFilter;

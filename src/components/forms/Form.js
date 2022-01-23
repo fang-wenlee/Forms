@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Form.css";
 const Form = () => {
+  const nameRef = useRef();
   // States for registration
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -10,6 +11,10 @@ const Form = () => {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+
+  useEffect(() => {
+    nameRef.current.focus();
+  });
 
   // Handling the name change
   const handleName = (e) => {
@@ -86,6 +91,7 @@ const Form = () => {
           type="text"
           placeholder="Name"
           required
+          ref={nameRef}
         />
         <br />
         <input

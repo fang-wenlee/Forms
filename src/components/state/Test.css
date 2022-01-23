@@ -1,0 +1,10 @@
+.object-change-container span {
+  color: red;
+  font-weight: 600;
+}
+.object-change-container .update-age {
+  display: none;
+}
+.age {
+  display: block;
+}

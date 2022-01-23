@@ -1,10 +1,11 @@
 import "./styles.css";
 
-// import Test from "./components/state/Test";
+import Test3 from "./components/state/Test3";
 
 //import ClassCompPage from "./pages/ClassCompPage";
 //import ContactFormPage from "./pages/ContactFormPage";
-import ButtonCompPage from "./pages/ButtonCompPage";
+//import ButtonCompPage from "./pages/ButtonCompPage";
+//import ObjectHandlePage from "./pages/ObjectHandlePage";
 
 export default function App() {
   return (
@@ -13,9 +14,11 @@ export default function App() {
       <hr />
       <Test1 /> 
       <ClassCompPage />*/}
-      {/* <hr /> <hr />
-      <ContactFormPage /> */}
-      <ButtonCompPage />
+      <hr /> <hr />
+      {/* <ContactFormPage /> */}
+      {/* <ButtonCompPage /> */}
+      <Test3 />
+      {/* <ObjectHandlePage /> */}
     </div>
   );
 }

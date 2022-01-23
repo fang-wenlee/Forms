@@ -22,13 +22,34 @@ export const IncrementButton = () => {
   );
 };
 
+export const ControllableClick = () => {
+  const [count, setCount] = useState(0);
+  const increase = () => {
+    setCount(count + 1);
+  };
+  const decrease = () => {
+    setCount(count - 1);
+  };
+
+  return (
+    <>
+      <h3> Button would be disabled after reach to 0 :</h3>
+      <button onClick={increase}> + </button>
+      <span> {count} </span>
+      <button disabled={count === 0} onClick={decrease}>
+        -
+      </button>
+    </>
+  );
+};
+
 export const ShowEvenCountButton = ({ input }) => {
   //console.log(input);
   const [count, setCount] = useState(0);
-  var mytimeout;
+
   const startCounting = () => {
     for (let i = 0; i <= input; i++) {
-      mytimeout = setTimeout(() => {
+      setTimeout(() => {
         console.log(i);
         setCount(count + i);
       }, i * 100);
@@ -41,7 +62,7 @@ export const ShowEvenCountButton = ({ input }) => {
 
   return (
     <>
-      <h3>Increasae the number 1 by 1 till user input.</h3>
+      <h3>Increasae the number by 1</h3>
       <button onClick={startCounting}>Start</button>
 
       <button onClick={resetCount}>Reset</button>

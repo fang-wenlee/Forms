@@ -8,18 +8,23 @@ import {
 
 import {
   IncrementButton,
-  ShowEvenCountButton
+  ControllableClick
+  // ShowEvenCountButton
 } from "../components/buttons/buttons";
 
 const ButtonCompPage = () => {
   return (
     <>
-      <h1>Buttons Test: </h1>
+      <h1>Buttons click Test: </h1>
+      <hr />
+      <ControllableClick />
+      <hr />
+
       <Timer />
       <hr />
       <IncrementButton />
       <hr />
-      <ShowEvenCountButton input={100} />
+      {/* <ShowEvenCountButton input={100} /> */}
 
       <br />
       <hr />

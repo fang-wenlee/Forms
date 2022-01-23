@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-const InsertItem = ({ addTask, removeAllCompleted }) => {
+const InsertItem = ({ addTask, removeAllCompleted, flag }) => {
   const [userInput, setUserInput] = useState(null);
+  const todoRef = useRef();
+
+  useEffect(() => {
+    todoRef.current.focus();
+  });
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -16,6 +21,7 @@ const InsertItem = ({ addTask, removeAllCompleted }) => {
   };
   const handleCompleted = (e) => {
     e.preventDefault();
+
     removeAllCompleted();
   };
 
@@ -27,9 +33,12 @@ const InsertItem = ({ addTask, removeAllCompleted }) => {
         value={userInput}
         onChange={handleChange}
         placeholder="Enter task"
+        ref={todoRef}
       />
       <button onClick={handleInsert}> Insert </button>
-      <button onClick={handleCompleted}>Remove All Completed </button>
+      <button onClick={handleCompleted}>
+        {flag === true ? "Whole list of Todos" : "UnFinish Todos"}
+      </button>
     </>
   );
 };
